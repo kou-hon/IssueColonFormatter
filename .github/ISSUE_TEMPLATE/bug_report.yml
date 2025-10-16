@@ -1,0 +1,45 @@
+name: 不具合報告
+description: 不具合報告
+labels: ["bug"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: 不具合の説明
+      description: 不具合の内容を詳細に記載する
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: 再現手順
+      description: 不具合の再現手順を詳細に記載する
+      placeholder: |
+        1. '...' 
+        2. '...' 
+        3. '...' 
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期待動作
+      description: 期待動作を記載する
+    validations:
+      required: true
+
+  - type: dropdown
+    id: reproducibility
+    attributes:
+      label: 再現性
+      multiple: true
+      options:
+        - 毎回
+        - 高い(10回中５～９回発生)
+        - 低い(10回中１～４回発生)
+        - 再現しない
+        - 不明
+    validations:
+      required: true
