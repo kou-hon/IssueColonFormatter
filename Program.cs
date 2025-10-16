@@ -128,8 +128,8 @@ static string FormatColonSpacePerLine(string text)
             continue;
         }
 
-        // 先頭のXXX:Valueのみ変換
-        line = Regex.Replace(line, @"^([A-Za-z0-9_\-]+):([^\s])", "$1: $2");
+        // 先頭のXXX:Valueのみ変換（スペースを含むキーに対応）
+        line = Regex.Replace(line, @"^([A-Za-z0-9_\- ]+):([^\s])", "$1: $2");
         lines[i] = line;
     }
     return string.Join("\n", lines);
